@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1vw;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+    
+    html {
+
+        font-size: 1vw;
+    }
+}
+
+#container {
+    background-color: white 50%;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    color: #1e3a35;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 90% 5%;
+    grid-gap: 0;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer"
+}
+
+
+/* Header Markup */
+
+nav {
+    background-color: #1e3a35;
+    padding: 5px 20px;
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 3vw;
+}
+
+ul {
+    list-style-type: none;    
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.navlinks li {
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.nav-link {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background-color: lightgray;
+}
+
+#header-img {
+    height: 3vh;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+p
+{
+    padding: 1.5vh;
+}
+
+
+/* Layout Markup */
+
+#content {
+    display: grid;
+    width: calc(100vw - 8vw);
+    height: 100%;
+    color: #1e3a35;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 100%;
+    grid-gap: 2%;
+    grid-template-areas:
+    "sidepanel-l mainwindow sidepanel-r";
+    margin: 2vw 2vw 2vw 2vw;
+
+}
+
+#mainwindow {
+    grid-area: mainwindow;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: 5%;
+    grid-template-areas:
+    "introduction"
+    "demo-video"
+    "pricing"
+    "contact-form";
+}
+
+#sidepanel-l {
+    grid-area: sidepanel-l;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+#sidepanel-r {
+    grid-area: sidepanel-r;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+
+
+/* Content Markup */
+
+#introduction {
+    grid-area: introduction;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 75%);
+    color: #1e3a35;
+    
+}
+
+#demo-video {
+    grid-area: demo-video;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 75%);
+    color: #1e3a35;
+}
+
+#pricing {
+    grid-area: pricing;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 75%);
+    color: #1e3a35;
+}
+
+#contact-form {
+    grid-area: contact-form;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 75%);
+    color: #1e3a35;
+}
+
+.main-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+input {
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    margin: 1px 1px 1px 0px;
+    border: 1px solid #1e3a35;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: inline;
+    max-width: 80%
+}
+
+label {
+    padding: 5px 5px 5px 5px;
+}
+
+
+
+/* Background Markup */
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #fff0bb;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.background span {
+    width: 19vmin;
+    height: 19vmin;
+    border-radius: 19vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 35;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+    color: #bed2a5;
+    top: 29%;
+    left: 57%;
+    animation-duration: 91s;
+    animation-delay: -79s;
+    transform-origin: 23vw -7vh;
+    box-shadow: 38vmin 0 5.599558577054818vmin currentColor;
+}
+.background span:nth-child(1) {
+    color: #bed2a5;
+    top: 22%;
+    left: 2%;
+    animation-duration: 82s;
+    animation-delay: -34s;
+    transform-origin: -22vw -2vh;
+    box-shadow: -38vmin 0 5.237315634661109vmin currentColor;
+}
+.background span:nth-child(2) {
+    color: #3e6b74;
+    top: 87%;
+    left: 87%;
+    animation-duration: 112s;
+    animation-delay: -97s;
+    transform-origin: 10vw -15vh;
+    box-shadow: 38vmin 0 5.1806650547096735vmin currentColor;
+}
+.background span:nth-child(3) {
+    color: #bed2a5;
+    top: 51%;
+    left: 64%;
+    animation-duration: 124s;
+    animation-delay: -69s;
+    transform-origin: 15vw -18vh;
+    box-shadow: -38vmin 0 5.45092575080365vmin currentColor;
+}
+.background span:nth-child(4) {
+    color: #bed2a5;
+    top: 30%;
+    left: 64%;
+    animation-duration: 120s;
+    animation-delay: -131s;
+    transform-origin: -13vw 2vh;
+    box-shadow: 38vmin 0 5.2889850482941325vmin currentColor;
+}
+.background span:nth-child(5) {
+    color: #3e6b74;
+    top: 81%;
+    left: 58%;
+    animation-duration: 42s;
+    animation-delay: -98s;
+    transform-origin: 6vw -17vh;
+    box-shadow: 38vmin 0 4.79411042941538vmin currentColor;
+}
+.background span:nth-child(6) {
+    color: #3e6b74;
+    top: 42%;
+    left: 42%;
+    animation-duration: 12s;
+    animation-delay: -135s;
+    transform-origin: -18vw 9vh;
+    box-shadow: 38vmin 0 5.714731457818729vmin currentColor;
+}
+.background span:nth-child(7) {
+    color: #3e6b74;
+    top: 94%;
+    left: 22%;
+    animation-duration: 74s;
+    animation-delay: -144s;
+    transform-origin: 12vw -18vh;
+    box-shadow: -38vmin 0 5.419470001553779vmin currentColor;
+}
+.background span:nth-child(8) {
+    color: #bed2a5;
+    top: 17%;
+    left: 42%;
+    animation-duration: 132s;
+    animation-delay: -99s;
+    transform-origin: 18vw 20vh;
+    box-shadow: 38vmin 0 5.56257020880598vmin currentColor;
+}
+.background span:nth-child(9) {
+    color: #bed2a5;
+    top: 14%;
+    left: 53%;
+    animation-duration: 66s;
+    animation-delay: -2s;
+    transform-origin: 14vw -14vh;
+    box-shadow: -38vmin 0 5.7373604431519984vmin currentColor;
+}
+.background span:nth-child(10) {
+    color: #bed2a5;
+    top: 75%;
+    left: 77%;
+    animation-duration: 121s;
+    animation-delay: -83s;
+    transform-origin: 14vw 3vh;
+    box-shadow: -38vmin 0 5.333442681223843vmin currentColor;
+}
+.background span:nth-child(11) {
+    color: #3e6b74;
+    top: 56%;
+    left: 67%;
+    animation-duration: 77s;
+    animation-delay: -37s;
+    transform-origin: 5vw 3vh;
+    box-shadow: 38vmin 0 4.7704015455701345vmin currentColor;
+}
+.background span:nth-child(12) {
+    color: #bed2a5;
+    top: 33%;
+    left: 96%;
+    animation-duration: 80s;
+    animation-delay: -126s;
+    transform-origin: -6vw -22vh;
+    box-shadow: 38vmin 0 5.42906262689475vmin currentColor;
+}
+.background span:nth-child(13) {
+    color: #3e6b74;
+    top: 7%;
+    left: 88%;
+    animation-duration: 155s;
+    animation-delay: -78s;
+    transform-origin: -7vw 20vh;
+    box-shadow: -38vmin 0 5.534979219059947vmin currentColor;
+}
+.background span:nth-child(14) {
+    color: #bed2a5;
+    top: 99%;
+    left: 58%;
+    animation-duration: 95s;
+    animation-delay: -93s;
+    transform-origin: -12vw 7vh;
+    box-shadow: -38vmin 0 5.731859208797121vmin currentColor;
+}
+.background span:nth-child(15) {
+    color: #bed2a5;
+    top: 42%;
+    left: 42%;
+    animation-duration: 105s;
+    animation-delay: -51s;
+    transform-origin: -7vw -5vh;
+    box-shadow: -38vmin 0 5.145400905908395vmin currentColor;
+}
+.background span:nth-child(16) {
+    color: #3e6b74;
+    top: 97%;
+    left: 37%;
+    animation-duration: 36s;
+    animation-delay: -13s;
+    transform-origin: 11vw 22vh;
+    box-shadow: -38vmin 0 5.42415907156985vmin currentColor;
+}
+.background span:nth-child(17) {
+    color: #3e6b74;
+    top: 97%;
+    left: 93%;
+    animation-duration: 111s;
+    animation-delay: -26s;
+    transform-origin: -14vw 15vh;
+    box-shadow: 38vmin 0 5.024916451842173vmin currentColor;
+}
+.background span:nth-child(18) {
+    color: #3e6b74;
+    top: 10%;
+    left: 24%;
+    animation-duration: 41s;
+    animation-delay: -15s;
+    transform-origin: 15vw 8vh;
+    box-shadow: -38vmin 0 5.564578349409944vmin currentColor;
+}
+.background span:nth-child(19) {
+    color: #3e6b74;
+    top: 63%;
+    left: 100%;
+    animation-duration: 23s;
+    animation-delay: -58s;
+    transform-origin: 19vw -14vh;
+    box-shadow: -38vmin 0 5.377038770284911vmin currentColor;
+}
